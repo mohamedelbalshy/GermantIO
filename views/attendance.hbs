@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-offset-3">
+            <h1 class="space-top text-center">Signup</h1>
+
+            
+            </div>
+            
+
+            <hr />
+
+            <form role="form" action="/attendance/{{employee._id}}" method="post">
+
+                
+                <div class="form-group">
+                    <label >Working Hours:</label>
+                    <input type="number" class="form-control" name="workingHours" >
+                </div>
+                <div class="form-group">
+                    <label for="date">Attendance Day</label>
+                    <input type="date" name="day">
+                </div>
+                <div class="form-group">
+                    <label for="">Attendance:</label>
+                    <input type="radio" name="status" value="Present"> Present<br>
+                    <input type="radio" name="status" value="Absent"> Absent<br>
+                    <input type="radio" name="status" value="Leave"> Leave <br>
+                    <input type="radio" name="status" value="Sick"> Sick <br>
+                    <input type="radio" name="status" value="DayOff"> Leave <br>
+
+                </div>
+
+                <button type="submit" class="btn btn-success">Submit</button>
+
+            </form>
+            <hr />
+
+        </div>
+    </div>
+</div>

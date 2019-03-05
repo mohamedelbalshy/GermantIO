@@ -1,0 +1,65 @@
+<div class="container">
+    <h1 class=" text-center">Manage Employees</h1>
+    <div class="row">
+        <div class="overview">
+            <div class="list-orders-card">
+                <div class="table-margin">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Mobile No</th>
+                                <th>Hire Date</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                                <th>Attendance</th>
+    
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each employees}}
+                            <tr>
+                                <td>
+                                    {{this.name}}
+                                </td>
+                                <td>
+                                    {{this.email}}
+
+                                </td>
+                                <td>{{this.mobileNo}}</td>
+                                <td>{{this.hireDate}}</td>
+                                
+                                
+                                <td>
+                                    <a href="/edit-employee/{{_id}}" class="btn btn-success btn-sm">Edit</a>
+                                </td>
+                                <td>
+                                    <form action="/delete/{{_id}}" method="post">
+                                        <input type="hidden" name="employeeId" id="employeeId" value="{{_id}}">
+                                        <button id="delete_Employee" type="submit" class="btn btn-success btn-sm">Delete</button>
+                                    </form>
+                                    
+                                </td> 
+                                <td>
+                                    <a href="/attendance/{{_id}}" class="btn btn-success btn-sm">Attendance</a>
+                                </td>
+                            </tr>
+
+                            {{/each}}
+                            <a href="/employee/add" class="btn btn-success btn-sm">Add</a>
+                            <a href="/report" class="btn btn-success btn-sm">Report</a>
+                            {{#if user}}
+                                <a href="/logout" class="btn btn-danger btn-sm">Log out</a>
+                            {{/if}}
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
